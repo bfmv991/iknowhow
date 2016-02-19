@@ -73,17 +73,17 @@ namespace SkillTradingWebsite.Models
 
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-Mail")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Das Passwort muss mind. {0} bis {2} Zeichen lang sein.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Passwort")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Passwort bestätigen")]
         [Compare("Password", ErrorMessage = "Die beiden Passwörter stimmen nicht überein.")]
         public string ConfirmPassword { get; set; }
     }
@@ -92,17 +92,17 @@ namespace SkillTradingWebsite.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-Mail")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Das Passwort muss mind. {0} bis {2} Zeichen lang sein.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Passwort")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Passwort bestätigen")]
         [Compare("Password", ErrorMessage = "Die beiden Passwörter stimmen nicht überein.")]
         public string ConfirmPassword { get; set; }
 
@@ -113,7 +113,7 @@ namespace SkillTradingWebsite.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-Mail")]
         public string Email { get; set; }
     }
 }

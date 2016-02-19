@@ -15,14 +15,14 @@ namespace SkillTradingWebsite.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Seitenbeschreiiung";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Kontaktseite";
 
             return View();
         }
