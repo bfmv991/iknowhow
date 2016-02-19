@@ -64,6 +64,13 @@ namespace SkillTradingWebsite.Models
 
     public class RegisterViewModel
     {
+        
+        [Required]
+        [Display(Name = "Vorname")]
+        public string FirstName { get; set; }
+        [Display(Name = "Nachname")]
+        public string LastName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -77,7 +84,7 @@ namespace SkillTradingWebsite.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Password", ErrorMessage = "Die beiden Passwörter stimmen nicht überein.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -96,7 +103,7 @@ namespace SkillTradingWebsite.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Password", ErrorMessage = "Die beiden Passwörter stimmen nicht überein.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
