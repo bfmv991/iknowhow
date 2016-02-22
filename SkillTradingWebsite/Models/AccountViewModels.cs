@@ -71,6 +71,8 @@ namespace SkillTradingWebsite.Models
         [Display(Name = "Nachname")]
         public string LastName { get; set; }
 
+        [Display(Name = "Benutzername")]
+        public string UserName { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "E-Mail")]
