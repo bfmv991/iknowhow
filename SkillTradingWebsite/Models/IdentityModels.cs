@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using SkillTradingWebsite.Models.DatabaseModels;
 
 namespace SkillTradingWebsite.Models
 {
@@ -28,10 +29,15 @@ namespace SkillTradingWebsite.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        //Properties
+        public DbSet<Category> Categories { get; set; }
+
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        //public System.Data.Entity.DbSet<SkillTradingWebsite.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

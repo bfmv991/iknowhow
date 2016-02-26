@@ -9,7 +9,7 @@ namespace SkillTradingWebsite.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(SkillTradingWebsite.Models.ApplicationDbContext context)
@@ -24,7 +24,7 @@ namespace SkillTradingWebsite.Migrations
             //      new Person { FullName = "Andrew Peters" },
             //      new Person { FullName = "Brice Lambson" },
             //      new Person { FullName = "Rowan Miller" }
-            //    );
+            //    );s
             //
         }
     }

@@ -1,16 +1,16 @@
 ﻿@model SkillTradingWebsite.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Verwaltung";
 }
 
 <h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    <h4>Bearbeiten Sie ihr Nutzerprofil.</h4>
+    <h4>Verwalten Sie Ihr Nutzerprofil</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>Password:</dt>
+        <dt>Passwort:</dt>
         <dd>
             [
             @if (Model.HasPassword)
@@ -19,23 +19,15 @@
             }
             else
             {
-                @Html.ActionLink("Erstellen", "SetPassword")
+                @Html.ActionLink("Create", "SetPassword")
             }
             ]
         </dd>
-        <dt>External Logins:</dt>
-        <dd>
-            @Model.Logins.Count [
-            @Html.ActionLink("Manage", "ManageLogins") ]
+        
+       
+       
         </dd>
-        </dd>
-        <dt>Zeigen Sie uns Ihre Skills!</dt>
-        <div class="list-group">
-  <button type="button" class="list-group-item">Cras justo odio</button>
-  <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
-  <button type="button" class="list-group-item">Morbi leo risus</button>
-  <button type="button" class="list-group-item">Porta ac consectetur ac</button>
-  <button type="button" class="list-group-item">Vestibulum at eros</button>
-</div>
     </dl>
 </div>
+    
+
