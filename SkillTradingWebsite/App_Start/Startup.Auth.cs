@@ -58,11 +58,11 @@ namespace SkillTradingWebsite
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "185597226457-stfralfm3hvghd8i68b872cc1ljujqe2.apps.googleusercontent.com",
+                ClientSecret = "TUZZvVmlEueZBHOgFpBG5xcF"
+            });
         }
     }
 }

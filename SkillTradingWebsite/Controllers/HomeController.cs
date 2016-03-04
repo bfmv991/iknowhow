@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace SkillTradingWebsite.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -15,7 +16,7 @@ namespace SkillTradingWebsite.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Seitenbeschreiiung";
+            ViewBag.Message = "Seitenbeschreibung";
 
             return View();
         }

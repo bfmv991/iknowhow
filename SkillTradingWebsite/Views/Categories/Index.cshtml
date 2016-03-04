@@ -6,8 +6,12 @@
 
 <h2></h2>
 
-<p>
+@if (User.IsInRole("Admin"))
+{
     @Html.ActionLink("Create New", "Create")
+}
+<p>
+   
 </p>
 
 <div class="panel panel-default">
