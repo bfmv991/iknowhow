@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using SkillTradingWebsite.Models;
+using Microsoft.Owin.Security.Facebook;
 
 namespace SkillTradingWebsite
 {
@@ -54,9 +55,10 @@ namespace SkillTradingWebsite
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+
+            app.UseFacebookAuthentication(
+               appId: "1736107103287139",
+               appSecret: "5c11a8f4b4581cccede70cba1a277a41");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {

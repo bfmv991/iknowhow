@@ -322,14 +322,26 @@ namespace SkillTradingWebsite.Controllers
         //
         // GET: /Account/ExternalLoginCallback
         [AllowAnonymous]
-        public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
+        public async Task<ActionResult> ExternalLoginCallback(ExternalLoginConfirmationViewModel model, string returnUrl)
         {
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             if (loginInfo == null)
             {
                 return RedirectToAction("Login");
             }
+            if (loginInfo.Login.LoginProvider == "Google")
+            {
+                var externalIdentity = AuthenticationManager.GetExternalIdentityAsync(DefaultAuthenticationTypes.ExternalCookie);
+                var emailClaim = externalIdentity.Result.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email);
+                var lastNameClaim = externalIdentity.Result.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Surname);
+                var givenNameClaim = externalIdentity.Result.Claims.FirstOrDefault(c => c.Type == ClaimTypes.GivenName);
 
+                var email = emailClaim.Value;
+                var firstName = givenNameClaim.Value;
+                var lastname = lastNameClaim.Value;
+               
+                
+            }
             // Sign in the user with this external login provider if the user already has a login
             var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
             switch (result)

@@ -1,4 +1,5 @@
 ﻿@model SkillTradingWebsite.Models.IndexViewModel
+
 @{
     ViewBag.Title = "Verwaltung";
 }
@@ -9,9 +10,9 @@
 <div>
     <h4>Verwalten Sie Ihr Nutzerprofil</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>Passwort:</dt>
-        <dd>
+    <table class="table">
+        <tr>Passwort:</tr>
+        <tr>
             [
             @if (Model.HasPassword)
             {
@@ -22,12 +23,14 @@
                 @Html.ActionLink("Create", "SetPassword")
             }
             ]
-        </dd>
-        
-       
-       
-        </dd>
-    </dl>
+        </tr>
+
+</table>
+    <table class="table">
+        <tr>Benutzername:</tr>
+
+    </table>
 </div>
-    
+ 
+
 

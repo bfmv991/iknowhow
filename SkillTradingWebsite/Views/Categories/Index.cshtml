@@ -11,26 +11,33 @@
     @Html.ActionLink("Create New", "Create")
 }
 <p>
-   
+
 </p>
-
-<div class="panel panel-default">
-    <!-- Default panel contents -->
-    <div class="panel-heading"><h4>Kategorieübersicht</h4></div>
-    
-    <table class="table">
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                
-            </tr>
-        }
-
-    </table>
+<div class="row">
+    <div class="visible-xs">
+        <div class="well">Hier finden sie die Kategorien. In jeder Kategorie befinden sich weitere Mitglieder die ihr können ab!</div>
     </div>
+    <div class="col-xs-12 col-sm-6">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+
+            <table class="table">
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+    <div class="hidden-xs col-sm-6">
+        <div class="well">Hier finden sie die Kategorien. In jeder Kategorie befinden sich weitere Mitglieder die ihr können ab!</div>
+    </div>
+</div>
