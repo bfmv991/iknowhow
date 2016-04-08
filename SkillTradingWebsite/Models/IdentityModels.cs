@@ -31,12 +31,14 @@ namespace SkillTradingWebsite.Models
         }
         //Properties
         public DbSet<Category> Categories { get; set; }
-
+        public DbSet<Offer> Offers { get; set; }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+
 
         //public System.Data.Entity.DbSet<SkillTradingWebsite.Models.ApplicationUser> ApplicationUsers { get; set; }
     }

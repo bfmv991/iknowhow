@@ -56,15 +56,15 @@ namespace SkillTradingWebsite
             //   consumerSecret: "");
 
 
-            app.UseFacebookAuthentication(
-               appId: "1736107103287139",
-               appSecret: "5c11a8f4b4581cccede70cba1a277a41");
+            //app.UseFacebookAuthentication(
+            //   appId: "1736107103287139",
+            //   appSecret: "5c11a8f4b4581cccede70cba1a277a41");
 
-            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            {
-                ClientId = "185597226457-stfralfm3hvghd8i68b872cc1ljujqe2.apps.googleusercontent.com",
-                ClientSecret = "TUZZvVmlEueZBHOgFpBG5xcF"
-            });
+            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            //{
+            //    ClientId = "185597226457-stfralfm3hvghd8i68b872cc1ljujqe2.apps.googleusercontent.com",
+            //    ClientSecret = "TUZZvVmlEueZBHOgFpBG5xcF"
+            //});
         }
     }
 }

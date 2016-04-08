@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<SkillTradingWebsite.Models.DatabaseModels.Category>
-
+@using SkillTradingWebsite.Models;
 @{
     ViewBag.Title = "Index";
 }
@@ -11,7 +11,6 @@
     @Html.ActionLink("Create New", "Create")
 }
 <p>
-
 </p>
 <div class="row">
     <div class="visible-xs">
@@ -20,16 +19,19 @@
     <div class="col-xs-12 col-sm-6">
         <div class="panel panel-default">
             <!-- Default panel contents -->
-
+         @{ ApplicationDbContext db = new ApplicationDbContext(); }
+   
             <table class="table">
-                @foreach (var item in Model)
+
+            @foreach (var item in Model)
             {
+                int CountCategories = (from o in db.Offers where o.CategoryID == item.CategoryID select o).Count();
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.CategoryName)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Description)
+                        <a href="@Url.Action("Index","Offers", new { id=item.CategoryID})">@Html.DisplayFor(modelItem => CountCategories)</a>
                         </td>
                     </tr>
                 }

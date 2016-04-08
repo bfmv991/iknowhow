@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SkillTradingWebsite.Models.DatabaseModels.Offer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfferName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfferName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @if (User.IsInRole("Admin")) {
+            @Html.ActionLink("Edit", "Edit", new { id = item.OfferID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.OfferID | 
+            @Html.ActionLink("Details", "Details", new { id=item.OfferID }) 
+            }
+            
+        </td>
+    </tr>
+}
+
+</table>

@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 
 namespace SkillTradingWebsite.Models.DatabaseModels
 {
-    public class Category
+    public class Offer
     {
-        public int CategoryID { get; set; }
+        public int OfferID { get; set; }
         [StringLength(255)]
-        [Display(Name = "Kategorie")]
-        public string CategoryName { get; set; }
+        
+        public string OfferName { get; set; }
         [StringLength(255)]
-        [Display(Name = "Beschreibung")]
+        
         public string Description { get; set; }
-        public virtual ICollection<Category> Categories { get; set; }
+        public int CategoryID { get; set; }
+        public virtual Category Category { get; set; }
+
     }
 }
